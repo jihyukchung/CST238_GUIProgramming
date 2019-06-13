@@ -1,0 +1,20 @@
+﻿<Application x:Class="Demo1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Demo1"
+             xmlns:Fluent="urn:fluent-ribbon"
+             StartupUri="MainWindow.xaml">
+
+    <!-- Later change name of BlueStyle.xaml to Generic/GenericStyle.xaml Because -->
+    <!-- 1. We are using this as our main stylesheet (Professor Howard's favorite color is blue) -->
+    <!-- 2. Fluent Ribbon uses Blue color as their generic theme -->
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Fluent;component/Themes/Generic.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Demo1;component/Style/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="Demo1.Pages.RibbonUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             
+             xmlns:local="clr-namespace:Demo1.Pages"
+             mc:Ignorable="d"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:resx="clr-namespace:Demo1.Properties"
+             xmlns:Fluent="urn:fluent-ribbon"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Fluent:Ribbon ContentHeight="0" >
+        <!-- 1.1 Backstage Menu -->
+        <Fluent:Ribbon.Menu>
+            <Fluent:Backstage>
+                <Fluent:BackstageTabControl>
+                    <Fluent:BackstageTabItem Header="{x:Static resx:Resources.Ribbon_Save}" 
+                                             IsEnabled="False"/>
+                    <Fluent:BackstageTabItem Header="{x:Static resx:Resources.Ribbon_Load}"  
+                                             IsEnabled="False"/>
+                    <Fluent:BackstageTabItem Header="{x:Static resx:Resources.Ribbon_Style}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0"
+                                   Style="{DynamicResource StyleBackstageTabItem}"/>
+                            <!-- Maybe Change this to DataTemplate with a list of colors -->
+                            <!-- which can simply be attached to button headers and icons-->
+                            <ScrollViewer Grid.Column="0" Grid.Row="1" 
+                                          VerticalScrollBarVisibility="Auto">
+                                <StackPanel Orientation="Vertical">
+                                    <Fluent:Button Header="{x:Static resx:Resources.Style_Generic}"
+                                                   Content="{x:Static resx:Resources.Style_Generic}"
+                                                   Style="{StaticResource StyleButtonsStyle}"
+                                                   Click="ChangeStyle_ButtonClick"/>
+                                    <Fluent:Button Header="{x:Static resx:Resources.Style_Red}"
+                                                   Content="{x:Static resx:Resources.Style_Red}"
+                                                   Style="{StaticResource StyleButtonsStyle}"
+                                                   Click="ChangeStyle_ButtonClick"/>
+                                    <Fluent:Button Header="{x:Static resx:Resources.Style_Purple}"
+                                                   Content="{x:Static resx:Resources.Style_Purple}"
+                                                   Style="{StaticResource StyleButtonsStyle}"
+                                                   Click="ChangeStyle_ButtonClick"/>
+                                    <Fluent:Button Header="{x:Static resx:Resources.Style_Yellow}"
+                                                   Content="{x:Static resx:Resources.Style_Yellow}"
+                                                   Style="{StaticResource StyleButtonsStyle}"
+                                                   Click="ChangeStyle_ButtonClick"/>
+                                    <Fluent:Button Header="{x:Static resx:Resources.Style_Green}"
+                                                   Content="{x:Static resx:Resources.Style_Green}"
+                                                   Style="{StaticResource StyleButtonsStyle}"
+                                                   Click="ChangeStyle_ButtonClick"/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                        </Fluent:BackstageTabItem>
+                        <Fluent:BackstageTabItem Header="{x:Static resx:Resources.Ribbon_Language}"  
+                                                 IsEnabled="False"/>
+                </Fluent:BackstageTabControl>
+            </Fluent:Backstage>
+        </Fluent:Ribbon.Menu>
+            
+        <!-- 1.2 Top Tab Bar -->
+        <Fluent:RibbonTabItem Header="{x:Static resx:Resources.Ribbon_Home}"
+                              IsSelected="True"
+                              PreviewMouseUp="PageButton_PreviewMouseUp"/>
+        <Fluent:RibbonTabItem Header="{x:Static resx:Resources.Ribbon_Budget}"
+                              IsEnabled="False"
+                              PreviewMouseUp="PageButton_PreviewMouseUp"/>
+        <Fluent:RibbonTabItem Header="{x:Static resx:Resources.Ribbon_Overview}"
+                              PreviewMouseUp="PageButton_PreviewMouseUp"/>
+    </Fluent:Ribbon>
+</UserControl>

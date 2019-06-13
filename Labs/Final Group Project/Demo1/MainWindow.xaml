@@ -1,0 +1,45 @@
+﻿<Fluent:RibbonWindow x:Class="Demo1.MainWindow"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"         
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     
+                     xmlns:local="clr-namespace:Demo1"
+                     xmlns:pages="clr-namespace:Demo1.Pages"
+                     xmlns:vm="clr-namespace:Demo1.ViewModel"
+                     xmlns:Fluent="urn:fluent-ribbon"
+                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                     mc:Ignorable="d"
+                     
+                     Title="MainWindow" Height="800" Width="1200">
+
+    <Fluent:RibbonWindow.DataContext>
+        <vm:ViewModels/>
+    </Fluent:RibbonWindow.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 1. Menu and Tabs -->
+        <pages:RibbonUserControl Grid.Row="0"
+                                 x:Name="x_Ribbon"/>
+
+        <!-- 2. Home Page -->
+        <pages:HomePageUserControl x:Name="x_HomePage" 
+                                   Grid.Row="1"
+                                   Visibility="Visible"/>
+
+        <!-- 3. Budget Page -->
+
+        <!-- 4. Overview Page -->
+        <pages:OverviewPageUserControl x:Name="x_OverviewPage" 
+                                       Grid.Row="1"
+                                       Visibility="Hidden"/>
+
+    </Grid>
+</Fluent:RibbonWindow>
+
+

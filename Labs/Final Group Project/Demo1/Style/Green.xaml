@@ -1,0 +1,87 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Demo1.Style"
+                    xmlns:Fluent="urn:fluent-ribbon"
+                    xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"  
+                    xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit">
+
+    <!-- Default Font Size -->
+    <Style x:Key="DefaultFontSize" TargetType="{x:Type Control}">
+        <Setter Property="Control.FontSize" Value="16"/>
+    </Style>
+
+    <!-- Ribbon User Control -->
+    <Style x:Key="StyleBackstageTabItem" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Style"/>
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="Margin" Value="30 35 30 10"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="Foreground" Value="#60AA17"/>
+    </Style>
+    <Style x:Key="StyleButtonsStyle" TargetType="{x:Type Fluent:Button}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="Size" Value="Large"/>
+        <Setter Property="Margin" Value="30 10 10 10"/>
+    </Style>
+
+    <!-- Open Category User Control -->
+    <Style x:Key="ToggleButtonStyle" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource {x:Type ToggleButton}}" />
+
+    <!-- Overview Page User Control -->
+    <Style x:Key="GraphStyle" TargetType="{x:Type DVC:Chart}">
+        <Setter Property="Background" Value="WhiteSmoke"/>
+    </Style>
+
+    <!-- Buttons -->
+    <Style x:Key="AddButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#60AA17" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Height" Value="30" />
+    </Style>
+    <Style x:Key="PlusMinusButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="#5DBCD2" />
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- Home Page Specifics -->
+    <Style x:Key="ListBoxText" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    <Style x:Key="ListBoxAmountStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="TextAlignment" Value="Right"/>
+    </Style>
+    <Style x:Key="ListBoxBorder" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="#60AA17"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Margin" Value="5 5 5 0"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+    <Style x:Key="InputTextBox" TargetType="{x:Type TextBox}">
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="TextAlignment" Value="Right"/>
+    </Style>
+    <Style x:Key="DatePickerStyle" TargetType="{x:Type Calendar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Calendar}">
+                    <Viewbox Height="400"
+                         Width="400">
+                        <CalendarItem x:Name="PART_CalendarItem"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"/>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
