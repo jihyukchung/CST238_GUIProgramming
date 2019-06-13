@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="DataResource.AddTaskForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DataResource"
+             mc:Ignorable="d" >
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/DataResource;component/Resources/StyleBlue.xaml"/>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="m_taskName"  
+                 Grid.Column="0"
+                 Text="{StaticResource ATF_TaskName}" 
+                 MouseLeftButtonDown="TextBlock_OnClick"
+                 Style="{StaticResource TextStyle}"/>
+        <TextBox x:Name="m_progressSize" 
+                 Grid.Column="1"
+                 Text="{StaticResource ATF_ProgressSize}" 
+                 MouseLeftButtonDown="TextBlock_OnClick" 
+                 Style="{StaticResource TextStyle}"/>
+        <Button x:Name="m_addTaskButton" 
+                Grid.Column="2"
+                Content="{StaticResource ATF_AddButton}" 
+                Click="AddButton_OnClick" 
+                Style="{StaticResource TextStyle}"/>
+    </Grid>
+</UserControl>
