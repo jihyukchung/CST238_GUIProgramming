@@ -1,0 +1,51 @@
+﻿<Window x:Class="WPFSkins.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFSkins"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="WPFSkins by Jihyuk Chung" Height="350" Width="525">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPFSkins;component/DefaultStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <DockPanel Style="{DynamicResource OuterWindow}">
+        <StackPanel Style="{StaticResource TopStackPanelStyle}">
+            <Label Style="{StaticResource HeaderLabelStyle}"/>
+            <Label Style="{StaticResource Label1Text}"/>
+            <Label Style="{StaticResource Label2Text}"/>
+            <ListBox ItemsSource="{DynamicResource ListBoxItems}"/>
+            <StackPanel Style="{StaticResource InnerStackPanelStyle}">
+                <Button Style="{DynamicResource HelpButtonStyle}"
+                        Content="{StaticResource HelpButtonText}"/>
+                <Button Style="{DynamicResource DefaultButtonStyle}"
+                        Content="{StaticResource OKButtonText}"/>
+            </StackPanel>
+            <StatusBar ItemsSource="{StaticResource StatusBarItems}" />
+        </StackPanel>
+        <StackPanel Style="{StaticResource BottomStackPanelStyle}">
+            <Button Style="{StaticResource DefaultButtonStyle}"
+                    Content="{StaticResource StyleButtonDefaultText}" 
+                    Click="Default_ButtonClick"/>
+            <Button Style="{StaticResource DefaultButtonStyle}"
+                    Content="{StaticResource StyleButton1Text}" 
+                    Click="Style1_ButtonClick"/>
+            <Button Style="{StaticResource DefaultButtonStyle}"
+                    Content="{StaticResource StyleButton2Text}"
+                    Click="Style2_ButtonClick"/>
+            <Button Style="{StaticResource DefaultButtonStyle}"
+                    Content="{StaticResource StyleButton3Text}" 
+                    Click="Style3_ButtonClick"/>
+            <Button Style="{StaticResource DefaultButtonStyle}"
+                    Content="{StaticResource StyleButton4Text}"
+                    Click="Style4_ButtonClick"/>
+        </StackPanel>
+    </DockPanel>
+</Window>

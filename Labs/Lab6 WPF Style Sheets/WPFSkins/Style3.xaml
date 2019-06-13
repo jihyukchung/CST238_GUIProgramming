@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPFSkins">
+
+    <Style x:Key="OuterWindow" TargetType="{x:Type DockPanel}">
+        <Setter Property="Background" Value="LightGreen"/>
+        <Setter Property="LastChildFill" Value="True"/>
+    </Style>
+    <Style x:Key="TopStackPanelStyle" TargetType="{x:Type StackPanel}">
+        <Setter Property="DockPanel.Dock" Value="Top"/>
+    </Style>
+    <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Content" Value="WPF 4.5 Unleashed"/>
+    </Style>
+    <Style x:Key="Label1Text" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="© 2013 SAMS Publishing"/>
+    </Style>
+    <Style x:Key="Label2Text" TargetType="{x:Type Label}">
+        <Setter Property="Content" Value="Installed Chapters:"/>
+    </Style>
+
+    <Style x:Key="StackPanelStyle" TargetType="{x:Type StackPanel}">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="TextElement.FontStyle" Value="Italic"/>
+    </Style>
+    <Style x:Key="InnerStackPanelStyle" TargetType="{x:Type StackPanel}" BasedOn="{StaticResource StackPanelStyle}">
+        <Setter Property="TextElement.FontSize" Value="30"/>
+    </Style>
+    <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="MinWidth" Value="75"/>
+        <Setter Property="Margin" Value="10"/>
+		<Setter Property="FontWeight" Value="UltraBold"/>
+    </Style>
+    <Style x:Key="HelpButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButtonStyle}">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="LightGreen"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BottomStackPanelStyle" TargetType="{x:Type StackPanel}" BasedOn="{StaticResource StackPanelStyle}">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+    </Style>
+</ResourceDictionary>
